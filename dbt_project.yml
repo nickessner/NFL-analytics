@@ -1,0 +1,11 @@
+name: 'nfl'
+version: '1.0.0'
+config-version: 2
+
+profile: 'nfl'   # dbt Cloud will handle the connection
+
+model-paths: ['models']
+
+models:
+  nfl:
+    +materialized: view
