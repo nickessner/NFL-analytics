@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: nfl_raw
+    database: daring-emitter-469314-f5
+    schema: nfl
+    tables:
+      - name: pbp_2019_2023
+        description: "NFL play-by-play (2019–2023)"
+        columns:
+          - name: game_id
+          - name: posteam
+          - name: home_team
+          - name: away_team
+          - name: play_type_simple
+          - name: yards_gained
+          - name: epa
+          - name: success
+          - name: shotgun
+          - name: no_huddle
+          - name: qb_dropback
+          - name: xpass
+          - name: offense_formation
+          - name: game_seconds_remaining
+          - name: score_differential
