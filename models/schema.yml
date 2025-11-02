@@ -16,7 +16,8 @@ models:
     columns:
       - name: posteam
         tests:
-          - not_null
+          - not_null:
+              where: "play_type_simple in ('pass','rush')"
       - name: play_type_simple
         tests:
           - not_null

@@ -1,6 +1,10 @@
 {{ config(
     materialized='table',
-    partition_by={"field": "season", "data_type": "int64"},
+    partition_by={
+      "field": "season",
+      "data_type": "int64",
+      "range": {"start": 2019, "end": 2023, "interval": 1}
+    },
     cluster_by=["posteam","opponent","play_type_simple","offense_formation"]
 ) }}
 
