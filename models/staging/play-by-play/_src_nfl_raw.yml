@@ -6,10 +6,12 @@ sources:
     schema: nfl
     tables:
       - name: pbp_2019_2023
-        description: "NFL play-by-play (2019–2023)"
+        description: "NFL play-by-play data from 2019–2023"
         columns:
           - name: game_id
+            description: "Unique game identifier"
           - name: posteam
+            description: "Possessing team"
           - name: home_team
           - name: away_team
           - name: play_type_simple
@@ -23,3 +25,13 @@ sources:
           - name: offense_formation
           - name: game_seconds_remaining
           - name: score_differential
+        freshness:
+          warn_after:
+            count: 7
+            period: day
+          # error_after:
+          #   count: 8
+          #   period: day
+        loaded_at_field: _etl_loaded_at
+
+
