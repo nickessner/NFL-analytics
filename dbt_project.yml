@@ -8,4 +8,8 @@ model-paths: ['models']
 
 models:
   nfl:
-    +materialized: view
+    staging:
+      +materialized: view  #Best practice is staging models as views
+
+    marts:
+      +materialized: table
