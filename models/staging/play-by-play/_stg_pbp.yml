@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_pbp
+    description: "Staging table for raw play-by-play data, filtered for valid plays."
+    columns:
+      - name: game_id
+        description: "Unique identifier for each game."
+        tests:
+          - not_null
+      - name: posteam
+        description: "Team currently in possession of the ball."
+        tests:
+          # We only expect a team when the play is a pass or rush
+          - not_null:
+              where: "play_type_simple in ('pass','rush')"
+      - name: opponent
+        description: "Opposing team."
+      - name: play_type_simple
+        description: "Simplified play type (e.g., pass, rush, kickoff)."

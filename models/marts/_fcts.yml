@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: fct_team_situation_agg
+    description: "Aggregated metrics per team, situation, and offensive formation."
+    columns:
+      - name: posteam
+        description: "Team currently in possession of the ball (aggregated level)."
+        tests:
+          - not_null:
+              where: "play_type_simple in ('pass','rush')"
+      - name: play_type_simple
+        description: "Simplified play type (pass, rush)."
+        tests:
+          - not_null
