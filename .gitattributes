@@ -1,0 +1,12 @@
+# Explicitly recognize .sql files as SQL
+*.sql linguist-language=SQL
+
+# Treat dbt .sql files as a blend of SQL and Jinja (Linguist handles this default well)
+# If needed, you could force recognition as 'SQL'
+# models/*.sql linguist-language=SQL 
+
+# Ensure .yml files are counted as YAML
+*.yml linguist-language=YAML
+
+# If you have Python code and it's being missed:
+*.py linguist-language=Python
